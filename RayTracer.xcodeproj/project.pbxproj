@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EEF21731BDC4C30001B8BB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21721BDC4C30001B8BB9 /* AppDelegate.swift */; };
+		1EEF21751BDC4C30001B8BB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21741BDC4C30001B8BB9 /* ViewController.swift */; };
+		1EEF21771BDC4C30001B8BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEF21761BDC4C30001B8BB9 /* Assets.xcassets */; };
+		1EEF217A1BDC4C30001B8BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EEF21781BDC4C30001B8BB9 /* Main.storyboard */; };
+		1EEF21851BDC4C30001B8BB9 /* RayTracerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21841BDC4C30001B8BB9 /* RayTracerTests.swift */; };
+		1EEF21901BDC4C30001B8BB9 /* RayTracerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF218F1BDC4C30001B8BB9 /* RayTracerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EEF21811BDC4C30001B8BB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EEF21671BDC4C30001B8BB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EEF216E1BDC4C30001B8BB9;
+			remoteInfo = RayTracer;
+		};
+		1EEF218C1BDC4C30001B8BB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EEF21671BDC4C30001B8BB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EEF216E1BDC4C30001B8BB9;
+			remoteInfo = RayTracer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1EEF216F1BDC4C30001B8BB9 /* RayTracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayTracer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EEF21721BDC4C30001B8BB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1EEF21741BDC4C30001B8BB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1EEF21761BDC4C30001B8BB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1EEF21791BDC4C30001B8BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1EEF217B1BDC4C30001B8BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EEF21801BDC4C30001B8BB9 /* RayTracerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RayTracerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EEF21841BDC4C30001B8BB9 /* RayTracerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayTracerTests.swift; sourceTree = "<group>"; };
+		1EEF21861BDC4C30001B8BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EEF218B1BDC4C30001B8BB9 /* RayTracerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RayTracerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EEF218F1BDC4C30001B8BB9 /* RayTracerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayTracerUITests.swift; sourceTree = "<group>"; };
+		1EEF21911BDC4C30001B8BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EEF216C1BDC4C30001B8BB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EEF217D1BDC4C30001B8BB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EEF21881BDC4C30001B8BB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EEF21661BDC4C30001B8BB9 = {
+			isa = PBXGroup;
+			children = (
+				1EEF21711BDC4C30001B8BB9 /* RayTracer */,
+				1EEF21831BDC4C30001B8BB9 /* RayTracerTests */,
+				1EEF218E1BDC4C30001B8BB9 /* RayTracerUITests */,
+				1EEF21701BDC4C30001B8BB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1EEF21701BDC4C30001B8BB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EEF216F1BDC4C30001B8BB9 /* RayTracer.app */,
+				1EEF21801BDC4C30001B8BB9 /* RayTracerTests.xctest */,
+				1EEF218B1BDC4C30001B8BB9 /* RayTracerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1EEF21711BDC4C30001B8BB9 /* RayTracer */ = {
+			isa = PBXGroup;
+			children = (
+				1EEF21721BDC4C30001B8BB9 /* AppDelegate.swift */,
+				1EEF21741BDC4C30001B8BB9 /* ViewController.swift */,
+				1EEF21761BDC4C30001B8BB9 /* Assets.xcassets */,
+				1EEF21781BDC4C30001B8BB9 /* Main.storyboard */,
+				1EEF217B1BDC4C30001B8BB9 /* Info.plist */,
+			);
+			path = RayTracer;
+			sourceTree = "<group>";
+		};
+		1EEF21831BDC4C30001B8BB9 /* RayTracerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EEF21841BDC4C30001B8BB9 /* RayTracerTests.swift */,
+				1EEF21861BDC4C30001B8BB9 /* Info.plist */,
+			);
+			path = RayTracerTests;
+			sourceTree = "<group>";
+		};
+		1EEF218E1BDC4C30001B8BB9 /* RayTracerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1EEF218F1BDC4C30001B8BB9 /* RayTracerUITests.swift */,
+				1EEF21911BDC4C30001B8BB9 /* Info.plist */,
+			);
+			path = RayTracerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EEF216E1BDC4C30001B8BB9 /* RayTracer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EEF21941BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracer" */;
+			buildPhases = (
+				1EEF216B1BDC4C30001B8BB9 /* Sources */,
+				1EEF216C1BDC4C30001B8BB9 /* Frameworks */,
+				1EEF216D1BDC4C30001B8BB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RayTracer;
+			productName = RayTracer;
+			productReference = 1EEF216F1BDC4C30001B8BB9 /* RayTracer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1EEF217F1BDC4C30001B8BB9 /* RayTracerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EEF21971BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracerTests" */;
+			buildPhases = (
+				1EEF217C1BDC4C30001B8BB9 /* Sources */,
+				1EEF217D1BDC4C30001B8BB9 /* Frameworks */,
+				1EEF217E1BDC4C30001B8BB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EEF21821BDC4C30001B8BB9 /* PBXTargetDependency */,
+			);
+			name = RayTracerTests;
+			productName = RayTracerTests;
+			productReference = 1EEF21801BDC4C30001B8BB9 /* RayTracerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1EEF218A1BDC4C30001B8BB9 /* RayTracerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EEF219A1BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracerUITests" */;
+			buildPhases = (
+				1EEF21871BDC4C30001B8BB9 /* Sources */,
+				1EEF21881BDC4C30001B8BB9 /* Frameworks */,
+				1EEF21891BDC4C30001B8BB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EEF218D1BDC4C30001B8BB9 /* PBXTargetDependency */,
+			);
+			name = RayTracerUITests;
+			productName = RayTracerUITests;
+			productReference = 1EEF218B1BDC4C30001B8BB9 /* RayTracerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EEF21671BDC4C30001B8BB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Heartbit;
+				TargetAttributes = {
+					1EEF216E1BDC4C30001B8BB9 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					1EEF217F1BDC4C30001B8BB9 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 1EEF216E1BDC4C30001B8BB9;
+					};
+					1EEF218A1BDC4C30001B8BB9 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 1EEF216E1BDC4C30001B8BB9;
+					};
+				};
+			};
+			buildConfigurationList = 1EEF216A1BDC4C30001B8BB9 /* Build configuration list for PBXProject "RayTracer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1EEF21661BDC4C30001B8BB9;
+			productRefGroup = 1EEF21701BDC4C30001B8BB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EEF216E1BDC4C30001B8BB9 /* RayTracer */,
+				1EEF217F1BDC4C30001B8BB9 /* RayTracerTests */,
+				1EEF218A1BDC4C30001B8BB9 /* RayTracerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1EEF216D1BDC4C30001B8BB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEF21771BDC4C30001B8BB9 /* Assets.xcassets in Resources */,
+				1EEF217A1BDC4C30001B8BB9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EEF217E1BDC4C30001B8BB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EEF21891BDC4C30001B8BB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EEF216B1BDC4C30001B8BB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEF21751BDC4C30001B8BB9 /* ViewController.swift in Sources */,
+				1EEF21731BDC4C30001B8BB9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EEF217C1BDC4C30001B8BB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEF21851BDC4C30001B8BB9 /* RayTracerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EEF21871BDC4C30001B8BB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEF21901BDC4C30001B8BB9 /* RayTracerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1EEF21821BDC4C30001B8BB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EEF216E1BDC4C30001B8BB9 /* RayTracer */;
+			targetProxy = 1EEF21811BDC4C30001B8BB9 /* PBXContainerItemProxy */;
+		};
+		1EEF218D1BDC4C30001B8BB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EEF216E1BDC4C30001B8BB9 /* RayTracer */;
+			targetProxy = 1EEF218C1BDC4C30001B8BB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1EEF21781BDC4C30001B8BB9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EEF21791BDC4C30001B8BB9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1EEF21921BDC4C30001B8BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1EEF21931BDC4C30001B8BB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1EEF21951BDC4C30001B8BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RayTracer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.heartbit.RayTracer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1EEF21961BDC4C30001B8BB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RayTracer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.heartbit.RayTracer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1EEF21981BDC4C30001B8BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RayTracerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.heartbit.RayTracerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RayTracer.app/Contents/MacOS/RayTracer";
+			};
+			name = Debug;
+		};
+		1EEF21991BDC4C30001B8BB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RayTracerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.heartbit.RayTracerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RayTracer.app/Contents/MacOS/RayTracer";
+			};
+			name = Release;
+		};
+		1EEF219B1BDC4C30001B8BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RayTracerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.heartbit.RayTracerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RayTracer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1EEF219C1BDC4C30001B8BB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RayTracerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = us.heartbit.RayTracerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RayTracer;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1EEF216A1BDC4C30001B8BB9 /* Build configuration list for PBXProject "RayTracer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EEF21921BDC4C30001B8BB9 /* Debug */,
+				1EEF21931BDC4C30001B8BB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EEF21941BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EEF21951BDC4C30001B8BB9 /* Debug */,
+				1EEF21961BDC4C30001B8BB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1EEF21971BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EEF21981BDC4C30001B8BB9 /* Debug */,
+				1EEF21991BDC4C30001B8BB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1EEF219A1BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EEF219B1BDC4C30001B8BB9 /* Debug */,
+				1EEF219C1BDC4C30001B8BB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1EEF21671BDC4C30001B8BB9 /* Project object */;
+}
