@@ -64,6 +64,10 @@ public func * (left: Vector, right: Vector) -> Double {
     return left.dot(right)
 }
 
+public func / (left: Vector, right: Double) -> Vector {
+    return Vector(left.x / right, left.y / right, left.z / right)
+}
+
 infix operator × {
     associativity left
     precedence 155

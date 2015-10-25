@@ -39,6 +39,11 @@ class VectorTests: XCTestCase {
         XCTAssertEqual(a * 3, Vector(3, 6, 9))
     }
     
+    func testScalarDivision() {
+        let a = Vector(10, 15, 16)
+        XCTAssertEqual(a / 2, Vector(5, 7.5, 8))
+    }
+    
     func testDotProduct() {
         let a = Vector(1, 2, 3)
         let b = Vector(4, 5, 6)
