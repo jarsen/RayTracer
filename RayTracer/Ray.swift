@@ -8,15 +8,19 @@
 
 import GLKit
 
-enum Type {
-    case Primary
-    case Reflection
-    case Transmission
-    case Shadow
-}
-
-struct Ray {
-    var origin: Point
-    var direction: Vector
-    var type: Type
+public struct Ray {
+    public enum Type {
+        case Primary
+        case Reflection
+        case Transmission
+        case Shadow
+    }
+    
+    public var origin: Point = Vector.Zero
+    public var direction = Vector.Zero
+    public var type: Type
+    
+    init(type: Type) {
+        self.type = type
+    }
 }
