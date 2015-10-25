@@ -18,6 +18,6 @@ struct Sphere : Traceable {
     }
     
     func normal(point: Point) -> Vector {
-        return GLKVector3Subtract(point, center)
+        return point - center
     }
 }

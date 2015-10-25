@@ -8,9 +8,6 @@
 
 import GLKit
 
-typealias Point = GLKVector3
-typealias Vector = GLKVector3
-
 enum Type {
     case Primary
     case Reflection
