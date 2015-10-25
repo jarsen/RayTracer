@@ -59,4 +59,20 @@ class VectorTests: XCTestCase {
         XCTAssertEqual(a.cross(b), Vector(-3, 6, -3))
         XCTAssertEqual(a × b, Vector(-3, 6, -3))
     }
+    
+    func testLength() {
+        let a = Vector(1, 0, 0)
+        let b = Vector(3, 4, 0)
+        
+        XCTAssertEqual(a.length(), 1)
+        XCTAssertEqual(b.length(), 5)
+    }
+    
+    func testNormalize() {
+        let a = Vector(1, 0, 0)
+        let b = Vector(3, 4, 0)
+        
+        XCTAssertEqual(a.normalized(), Vector(1, 0, 0))
+        XCTAssertEqual(b.normalized(), Vector(3/5, 4/5, 0))
+    }
 }

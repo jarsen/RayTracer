@@ -32,6 +32,14 @@ public struct Vector : Equatable {
             return Vector(0, 0, 0)
         }
     }
+    
+    public func length() -> Double {
+        return sqrt(x * x + y * y + z * z)
+    }
+    
+    public func normalized() -> Vector {
+        return self / length()
+    }
 }
 
 public typealias Point = Vector
