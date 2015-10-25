@@ -20,7 +20,7 @@ public struct Ray {
     public var direction = Vector.Zero
     public var type: Type
     
-    init(type: Type) {
+    public init(type: Type) {
         self.type = type
     }
 }
