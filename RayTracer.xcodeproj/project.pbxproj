@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E88DEFF1BDC73A900F2897D /* SphereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88DEFE1BDC73A900F2897D /* SphereTests.swift */; };
 		1EEF21731BDC4C30001B8BB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21721BDC4C30001B8BB9 /* AppDelegate.swift */; };
 		1EEF21751BDC4C30001B8BB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21741BDC4C30001B8BB9 /* ViewController.swift */; };
 		1EEF21771BDC4C30001B8BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEF21761BDC4C30001B8BB9 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E88DEFE1BDC73A900F2897D /* SphereTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereTests.swift; sourceTree = "<group>"; };
 		1EEF216F1BDC4C30001B8BB9 /* RayTracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayTracer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEF21721BDC4C30001B8BB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EEF21741BDC4C30001B8BB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				1EEF21841BDC4C30001B8BB9 /* RayTracerTests.swift */,
 				1EEF21861BDC4C30001B8BB9 /* Info.plist */,
 				1EEF21A71BDC6735001B8BB9 /* VectorTests.swift */,
+				1E88DEFE1BDC73A900F2897D /* SphereTests.swift */,
 			);
 			path = RayTracerTests;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EEF21A81BDC6735001B8BB9 /* VectorTests.swift in Sources */,
+				1E88DEFF1BDC73A900F2897D /* SphereTests.swift in Sources */,
 				1EEF21851BDC4C30001B8BB9 /* RayTracerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +499,7 @@
 				1EEF21961BDC4C30001B8BB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1EEF21971BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracerTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +508,7 @@
 				1EEF21991BDC4C30001B8BB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1EEF219A1BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracerUITests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +517,7 @@
 				1EEF219C1BDC4C30001B8BB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

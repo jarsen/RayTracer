@@ -9,15 +9,48 @@
 import Foundation
 import GLKit
 
-struct Sphere : Traceable {
-    var center: Point
-    var radius: Float
+public struct Sphere : Traceable {
+    public var center: Point
+    public var radius: Double
     
-    func intersect(ray: Ray) -> Point? {
-        return nil
+    public init(center: Point = Point.Zero, radius: Double = 0) {
+        self.center = center
+        self.radius = radius
     }
     
-    func normal(point: Point) -> Vector {
-        return point - center
+    public func intersect(ray: Ray) -> Point? {
+        // Calculate B & C of the quadtratic
+        let B = 2 * ray.direction * (ray.origin - center)
+        let oc = ray.origin - center
+        let C = (oc * oc) - (radius * radius)
+        
+        // Calculate the discriminant
+        let D = B * B - 4 * C
+        if D < 0 {
+            return nil
+        }
+    
+        let t: Double
+        
+        // calculate smaller intersection parameter: t0
+        let t0 = (-B - sqrt(D)) / 2
+        if t0 <= 0 {
+            // calculate larger t-value: t1
+            let t1 = (-B + sqrt(D)) / 2
+            if t1 <= 0 {
+                return nil // intersection point behind ray
+            }
+            t = t1
+        }
+        else {
+            t = t0
+        }
+        
+        return ray.origin + ray.direction * t
+    }
+    
+    
+    public func normal(point: Point) -> Vector {
+        return (point - center) / radius
     }
 }
