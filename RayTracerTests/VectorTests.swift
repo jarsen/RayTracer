@@ -33,11 +33,18 @@ class VectorTests: XCTestCase {
         XCTAssertEqual(-a, Vector(-1, -2, -3))
     }
     
+    func testScalarProduct() {
+        let a = Vector(1, 2, 3)
+        XCTAssertEqual(3 * a, Vector(3, 6, 9))
+        XCTAssertEqual(a * 3, Vector(3, 6, 9))
+    }
+    
     func testDotProduct() {
         let a = Vector(1, 2, 3)
         let b = Vector(4, 5, 6)
         
         XCTAssertEqual(a.dot(b), 32)
+        XCTAssertEqual(a * b, 32)
     }
     
     func testCrossProduct() {
@@ -45,5 +52,6 @@ class VectorTests: XCTestCase {
         let b = Vector(5, 6, 7)
         
         XCTAssertEqual(a.cross(b), Vector(-3, 6, -3))
+        XCTAssertEqual(a × b, Vector(-3, 6, -3))
     }
 }
