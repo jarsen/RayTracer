@@ -14,6 +14,8 @@
 		1EEF21851BDC4C30001B8BB9 /* RayTracerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21841BDC4C30001B8BB9 /* RayTracerTests.swift */; };
 		1EEF21901BDC4C30001B8BB9 /* RayTracerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF218F1BDC4C30001B8BB9 /* RayTracerUITests.swift */; };
 		1EEF21A01BDC4EB8001B8BB9 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF219F1BDC4EB8001B8BB9 /* Ray.swift */; };
+		1EEF21A21BDC5B37001B8BB9 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21A11BDC5B37001B8BB9 /* Sphere.swift */; };
+		1EEF21A41BDC61F5001B8BB9 /* Traceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21A31BDC61F5001B8BB9 /* Traceable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		1EEF218F1BDC4C30001B8BB9 /* RayTracerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayTracerUITests.swift; sourceTree = "<group>"; };
 		1EEF21911BDC4C30001B8BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EEF219F1BDC4EB8001B8BB9 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
+		1EEF21A11BDC5B37001B8BB9 /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
+		1EEF21A31BDC61F5001B8BB9 /* Traceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Traceable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				1EEF21781BDC4C30001B8BB9 /* Main.storyboard */,
 				1EEF217B1BDC4C30001B8BB9 /* Info.plist */,
 				1EEF219F1BDC4EB8001B8BB9 /* Ray.swift */,
+				1EEF21A11BDC5B37001B8BB9 /* Sphere.swift */,
+				1EEF21A31BDC61F5001B8BB9 /* Traceable.swift */,
 			);
 			path = RayTracer;
 			sourceTree = "<group>";
@@ -257,6 +263,8 @@
 			files = (
 				1EEF21A01BDC4EB8001B8BB9 /* Ray.swift in Sources */,
 				1EEF21751BDC4C30001B8BB9 /* ViewController.swift in Sources */,
+				1EEF21A41BDC61F5001B8BB9 /* Traceable.swift in Sources */,
+				1EEF21A21BDC5B37001B8BB9 /* Sphere.swift in Sources */,
 				1EEF21731BDC4C30001B8BB9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
