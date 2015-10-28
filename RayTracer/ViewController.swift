@@ -9,11 +9,15 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    @IBOutlet weak var imageView: NSImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let imageSize = view.bounds.size
+        let rayTracer = RayTracer()
+        let image = rayTracer.trace(imageSize, camera: Point(0,0,10))
+        imageView.image = image
     }
 
     override var representedObject: AnyObject? {
