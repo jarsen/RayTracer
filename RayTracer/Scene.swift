@@ -8,8 +8,12 @@
 
 import Cocoa
 
-struct Scene {
-    var items = [Traceable]()
-    var lookFrom: Point = Point.Zero
-    var backgroundColor = NSColor.lightGrayColor()
+public struct Scene {
+    public var items = [Traceable]()
+    public var lookFrom: Point = Point.Zero
+    public var backgroundColor = NSColor.lightGrayColor()
+    
+    public init() {
+        
+    }
 }

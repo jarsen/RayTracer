@@ -20,8 +20,8 @@ extension NSColor {
     }
 }
 
-struct RayTracer {
-    func trace(imageSize: NSSize, scene: Scene) -> NSImage {
+public struct RayTracer {
+    public func trace(imageSize: NSSize, scene: Scene) -> NSImage {
         let pixelsWide = Int(imageSize.width)
         let pixelsHigh = Int(imageSize.height)
     
@@ -31,12 +31,32 @@ struct RayTracer {
         
         for x in 0..<pixelsWide {
             for y in 0..<pixelsHigh {
-                bitmap.setColor(.redColor(), atX: x, y: y)
+                let pixelColor: NSColor
+                let ray = primaryRayForPixel(imageSize, x: x, y: y, scene: scene)
+                if let (point, object) = nearestIntersection(ray, scene: scene) {
+                    pixelColor = object.color
+                    let _ = point
+                }
+                else {
+                    pixelColor = scene.backgroundColor
+                }
+                bitmap.setColor(pixelColor, atX: x, y: y)
             }
         }
         
         let image = NSImage(size: imageSize)
         image.addRepresentation(bitmap)
         return image
+    }
+    
+    private func nearestIntersection(ray: Ray, scene: Scene) -> (Point, Traceable)? {
+        return nil
+    }
+    
+    private func primaryRayForPixel(imageSize: NSSize, x: Int, y: Int, scene: Scene) -> Ray {
+        var ray = Ray(type: .Primary)
+        ray.origin = scene.lookFrom
+        // todo set correct direction and normalize
+        return ray
     }
 }

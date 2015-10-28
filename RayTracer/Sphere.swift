@@ -12,10 +12,12 @@ import GLKit
 public struct Sphere : Traceable {
     public var center: Point
     public var radius: Double
+    public var color: NSColor
     
-    public init(center: Point = Point.Zero, radius: Double = 0) {
+    public init(center: Point = Point.Zero, radius: Double = 0, color: NSColor = .whiteColor()) {
         self.center = center
         self.radius = radius
+        self.color = color
     }
     
     public func intersect(ray: Ray) -> Point? {

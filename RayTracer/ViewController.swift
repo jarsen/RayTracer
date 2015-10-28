@@ -23,6 +23,7 @@ class ViewController: NSViewController {
     func scene1() -> Scene {
         var scene = Scene()
         scene.lookFrom = Point(0, 0, 10)
+        scene.backgroundColor = .blueColor()
         return scene
     }
 }

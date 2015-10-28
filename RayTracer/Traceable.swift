@@ -6,9 +6,10 @@
 //  Copyright © 2015 Heartbit. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
-protocol Traceable {
+public protocol Traceable {
+    var color: NSColor { get }
     func intersect(ray: Ray) -> Point?
     func normal(point: Point) -> Vector
 }
