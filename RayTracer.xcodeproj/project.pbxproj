@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E1521EB1BDF1BDF0050E065 /* RayTracer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1521EA1BDF1BDF0050E065 /* RayTracer.swift */; };
+		1E1521ED1BE048DB0050E065 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1521EC1BE048DB0050E065 /* Scene.swift */; };
 		1E88DEFF1BDC73A900F2897D /* SphereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88DEFE1BDC73A900F2897D /* SphereTests.swift */; };
 		1EEF21731BDC4C30001B8BB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21721BDC4C30001B8BB9 /* AppDelegate.swift */; };
 		1EEF21751BDC4C30001B8BB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21741BDC4C30001B8BB9 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		1E1521EA1BDF1BDF0050E065 /* RayTracer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RayTracer.swift; sourceTree = "<group>"; };
+		1E1521EC1BE048DB0050E065 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		1E88DEFE1BDC73A900F2897D /* SphereTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereTests.swift; sourceTree = "<group>"; };
 		1EEF216F1BDC4C30001B8BB9 /* RayTracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayTracer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEF21721BDC4C30001B8BB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				1EEF21A31BDC61F5001B8BB9 /* Traceable.swift */,
 				1EEF21A51BDC6353001B8BB9 /* Vector.swift */,
 				1E1521EA1BDF1BDF0050E065 /* RayTracer.swift */,
+				1E1521EC1BE048DB0050E065 /* Scene.swift */,
 			);
 			path = RayTracer;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				1E1521EB1BDF1BDF0050E065 /* RayTracer.swift in Sources */,
 				1EEF21751BDC4C30001B8BB9 /* ViewController.swift in Sources */,
 				1EEF21A41BDC61F5001B8BB9 /* Traceable.swift in Sources */,
+				1E1521ED1BE048DB0050E065 /* Scene.swift in Sources */,
 				1EEF21A21BDC5B37001B8BB9 /* Sphere.swift in Sources */,
 				1EEF21A61BDC6353001B8BB9 /* Vector.swift in Sources */,
 				1EEF21731BDC4C30001B8BB9 /* AppDelegate.swift in Sources */,

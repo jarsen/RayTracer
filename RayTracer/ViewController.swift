@@ -16,16 +16,14 @@ class ViewController: NSViewController {
 
         let imageSize = view.bounds.size
         let rayTracer = RayTracer()
-        let image = rayTracer.trace(imageSize, camera: Point(0,0,10))
+        let image = rayTracer.trace(imageSize, scene: scene1())
         imageView.image = image
     }
 
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    func scene1() -> Scene {
+        var scene = Scene()
+        scene.lookFrom = Point(0, 0, 10)
+        return scene
     }
-
-
 }
 

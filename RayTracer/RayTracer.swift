@@ -21,9 +21,7 @@ extension NSColor {
 }
 
 struct RayTracer {
-    var items = [Traceable]()
-    
-    func trace(imageSize: NSSize, camera: Point) -> NSImage {
+    func trace(imageSize: NSSize, scene: Scene) -> NSImage {
         let pixelsWide = Int(imageSize.width)
         let pixelsHigh = Int(imageSize.height)
     
