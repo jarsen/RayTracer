@@ -24,6 +24,8 @@ class ViewController: NSViewController {
         var scene = Scene()
         scene.lookFrom = Point(0, 0, 10)
         scene.backgroundColor = .blueColor()
+        let sphere = Sphere(center: Point(0, 0, -5), radius: 1, color: .greenColor())
+        scene.objects = [sphere]
         return scene
     }
 }

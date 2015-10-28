@@ -54,9 +54,12 @@ public struct RayTracer {
     }
     
     private func primaryRayForPixel(imageSize: NSSize, x: Int, y: Int, scene: Scene) -> Ray {
+        let halfHeight = Double(imageSize.height) / 2
+        let halfWidth = Double(imageSize.width) / 2
+        let screenPoint = Point(Double(x) - halfWidth, Double(y) - halfHeight, 0)
         var ray = Ray(type: .Primary)
         ray.origin = scene.lookFrom
-        // todo set correct direction and normalize
+        ray.direction = (screenPoint - scene.lookFrom).normalized()
         return ray
     }
 }
