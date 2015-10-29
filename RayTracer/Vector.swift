@@ -8,7 +8,7 @@
 
 import GLKit
 
-public struct Vector : Equatable {
+public struct Vector : Equatable, CustomStringConvertible {
     public var x: Double
     public var y: Double
     public var z: Double
@@ -39,6 +39,10 @@ public struct Vector : Equatable {
     
     public func normalized() -> Vector {
         return self / length()
+    }
+    
+    public var description: String {
+        return "(\(x), \(y), \(z))"
     }
 }
 

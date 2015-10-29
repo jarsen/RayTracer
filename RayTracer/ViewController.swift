@@ -22,9 +22,9 @@ class ViewController: NSViewController {
 
     func scene1() -> Scene {
         var scene = Scene()
-        scene.lookFrom = Point(0, 0, 10)
+        scene.lookFrom = Point(0, 0, 5)
         scene.backgroundColor = .blueColor()
-        let sphere = Sphere(center: Point(0, 0, -5), radius: 1, color: .greenColor())
+        let sphere = Sphere(center: Point(0, 0, 0), radius: 4, color: .greenColor())
         scene.objects = [sphere]
         return scene
     }

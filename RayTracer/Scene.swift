@@ -11,7 +11,7 @@ import Cocoa
 public struct Scene {
     public var objects = [Traceable]()
     public var lookFrom: Point = Point.Zero
-    public var backgroundColor = NSColor.lightGrayColor()
+    public var backgroundColor = NSColor.blueColor()
     
     public init() {
         

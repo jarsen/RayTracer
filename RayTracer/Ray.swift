@@ -8,12 +8,21 @@
 
 import GLKit
 
-public struct Ray {
-    public enum Type {
+public struct Ray : CustomStringConvertible {
+    public enum Type : CustomStringConvertible {
         case Primary
         case Reflection
         case Transmission
         case Shadow
+        
+        public var description: String {
+            switch self {
+            case .Primary: return "Primary"
+            case .Reflection: return "Reflection"
+            case .Transmission: return "Transmission"
+            case .Shadow: return "Shadow"
+            }
+        }
     }
     
     public var origin: Point = Vector.Zero
@@ -22,5 +31,9 @@ public struct Ray {
     
     public init(type: Type) {
         self.type = type
+    }
+    
+    public var description: String {
+        return "\(type). Origin: \(origin). Direction: \(direction)"
     }
 }

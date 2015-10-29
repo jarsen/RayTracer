@@ -50,6 +50,24 @@ public struct RayTracer {
     }
     
     private func nearestIntersection(ray: Ray, scene: Scene) -> (Point, Traceable)? {
+        var nearestPoint: Point?
+        var shortestLength = Double.infinity
+        var nearestObject: Traceable?
+
+        for object in scene.objects {
+            if let point = object.intersect(ray) {
+                let length = (point - ray.origin).length()
+                if length < shortestLength {
+                    shortestLength = length
+                    nearestPoint = point
+                    nearestObject = object
+                }
+            }
+        }
+        
+        if let nearestPoint = nearestPoint, nearestObject = nearestObject {
+            return (nearestPoint, nearestObject)
+        }
         return nil
     }
     
