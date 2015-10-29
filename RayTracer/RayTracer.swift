@@ -29,10 +29,17 @@ public struct RayTracer {
             fatalError("Error creating bitmap image")
         }
         
+        let halfWindowHeight = Double(imageSize.height) / 2
+        let halfWindowWidth = Double(imageSize.width) / 2
+        let xmin = -halfWindowWidth
+        let xmax = halfWindowWidth
+        let ymin = -halfWindowHeight
+        let ymax = halfWindowHeight
+        
         for x in 0..<pixelsWide {
             for y in 0..<pixelsHigh {
                 let pixelColor: NSColor
-                let ray = primaryRayForPixel(imageSize, x: x, y: y, scene: scene)
+                let ray = primaryRayForPixel(imageSize, scene: scene, x: x, y: y, xmin: xmin, xmax: xmax, ymin: ymin, ymax: ymax)
                 if let (point, object) = nearestIntersection(ray, scene: scene) {
                     pixelColor = object.color
                     let _ = point
@@ -71,10 +78,11 @@ public struct RayTracer {
         return nil
     }
     
-    private func primaryRayForPixel(imageSize: NSSize, x: Int, y: Int, scene: Scene) -> Ray {
-        let halfHeight = Double(imageSize.height) / 2
-        let halfWidth = Double(imageSize.width) / 2
-        let screenPoint = Point(Double(x) - halfWidth, Double(y) - halfHeight, 0)
+    private func primaryRayForPixel(imageSize: NSSize, scene: Scene, x: Int, y: Int, xmin: Double, xmax: Double, ymin: Double, ymax: Double) -> Ray {
+        let u = (Double(x) - xmin) * ((scene.viewport.umax - scene.viewport.umin)/(xmax - xmin)) + scene.viewport.umin + scene.viewport.umin
+        let v = (Double(y) - ymin) * ((scene.viewport.vmax - scene.viewport.vmin)/(ymax - ymin)) + scene.viewport.vmin + scene.viewport.umin
+        
+        let screenPoint = Point(u, v, 0)
         var ray = Ray(type: .Primary)
         ray.origin = scene.lookFrom
         ray.direction = (screenPoint - scene.lookFrom).normalized()
