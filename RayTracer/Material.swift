@@ -9,11 +9,14 @@
 import Cocoa
 
 public enum Material {
-    case Diffuse(Color)
+    case Diffuse(color: Color, specularHighlight: Color, phongConstant: Double)
+    case Reflective(color: Color)
+//    case Transparent(Color)
     
     public var color: Color {
         switch self {
-        case let .Diffuse(color): return color
+        case let .Diffuse(color, _, _): return color
+        case let .Reflective(color): return color
         }
     }
 }
