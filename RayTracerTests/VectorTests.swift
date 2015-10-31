@@ -49,7 +49,7 @@ class VectorTests: XCTestCase {
         let b = Vector(4, 5, 6)
         
         XCTAssertEqual(a.dot(b), 32)
-        XCTAssertEqual(a * b, 32)
+        XCTAssertEqual(a ∘ b, 32)
     }
     
     func testCrossProduct() {
