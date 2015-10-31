@@ -1,4 +1,4 @@
-This is a _basic_ ray tracer written in swift.
+This is a _basic_ ray tracer written in swift. The `LookAt` is always the origin, and the `LookFrom` must be along the x-axis for now.
 
 Capabilities:
 - [x] The ability to ray trace spheres.
