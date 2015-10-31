@@ -29,6 +29,9 @@ class ViewController: NSViewController {
         let sphere1 = Sphere(center: Point(-2, 0, 0), radius: 2, material: .Diffuse(color: Color(0, 0, 1), specularHighlight: Color(1, 1, 1), phongConstant: 4))
         let sphere2 = Sphere(center: Point(1, 0, -2), radius: 2, material: .Diffuse(color: Color(0, 1, 0), specularHighlight: Color(1, 1, 1), phongConstant: 4))
         scene.objects = [sphere1, sphere2]
+        var lightSource = DirectionalLightSource()
+        lightSource.origin = Point(0, 1, 1)
+        scene.lightSources.append(lightSource)
         return scene
     }
 }
