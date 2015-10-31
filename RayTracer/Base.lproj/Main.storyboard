@@ -653,8 +653,7 @@
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="1000" height="1000"/>
+                        <rect key="contentRect" x="337" y="0.0" width="1000" height="1000"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -668,24 +667,23 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="RayTracer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="791" height="692"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ez0-JT-G2X">
-                                <rect key="frame" x="-105" y="-154" width="1001" height="1000"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1000" id="P2s-m3-Vgk"/>
-                                    <constraint firstAttribute="width" constant="1000" id="PTM-NZ-hW7"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                 <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Fon-no-9zp"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Ez0-JT-G2X" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="C3w-9u-77w"/>
-                            <constraint firstItem="Ez0-JT-G2X" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="f5J-HF-Whe"/>
+                            <constraint firstAttribute="bottom" secondItem="Ez0-JT-G2X" secondAttribute="bottom" id="MN1-KF-7u8"/>
+                            <constraint firstItem="Ez0-JT-G2X" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="OPL-rz-ioL"/>
+                            <constraint firstAttribute="trailing" secondItem="Ez0-JT-G2X" secondAttribute="trailing" id="P3e-Gp-jf2"/>
+                            <constraint firstItem="Ez0-JT-G2X" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="bs8-ef-Pmo"/>
                         </constraints>
                         <animations/>
                     </view>
@@ -693,9 +691,8 @@
                         <outlet property="imageView" destination="Ez0-JT-G2X" id="EJj-rf-fDo"/>
                     </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="167.5" y="1258"/>
+            <point key="canvasLocation" x="81" y="1507"/>
         </scene>
     </scenes>
 </document>
