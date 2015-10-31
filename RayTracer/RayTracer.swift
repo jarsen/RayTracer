@@ -41,7 +41,7 @@ public struct RayTracer {
                 let pixelColor: NSColor
                 let ray = primaryRayForPixel(imageSize, scene: scene, x: x, y: y, xmin: xmin, xmax: xmax, ymin: ymin, ymax: ymax)
                 if let (point, object) = nearestIntersection(ray, scene: scene) {
-                    pixelColor = object.material.color
+                    pixelColor = object.material.color.nsColor()
                     let _ = point
                 }
                 else {

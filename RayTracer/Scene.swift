@@ -22,11 +22,18 @@ public struct Viewport {
     }
 }
 
+public struct DirectionalLightSource {
+    var origin: Point = Point.Zero
+    var color = Color(1, 1, 1)
+}
+
 public struct Scene {
     public var objects = [Traceable]()
     public var lookFrom: Point = Point.Zero
     public var backgroundColor = NSColor.blueColor()
     public var viewport = Viewport(umin: -5, umax: 5, vmin: -5, vmax: 5)
+    public var ambientLight = Color(0.1, 0.1, 0.1)
+    public var lightSources = [DirectionalLightSource]()
     
     public init() {
         

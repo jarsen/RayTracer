@@ -47,6 +47,13 @@ public struct Vector : Equatable, CustomStringConvertible {
 }
 
 public typealias Point = Vector
+public typealias Color = Vector
+
+public extension Color {
+    public func nsColor() -> NSColor {
+        return NSColor(calibratedRed: CGFloat(x), green: CGFloat(y), blue: CGFloat(z), alpha: 1)
+    }
+}
 
 public func + (left: Vector, right: Vector) -> Vector {
     return Vector(left.x + right.x, left.y + right.y, left.z + right.z)

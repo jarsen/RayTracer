@@ -9,9 +9,9 @@
 import Cocoa
 
 public enum Material {
-    case Diffuse(NSColor)
+    case Diffuse(Color)
     
-    public var color: NSColor {
+    public var color: Color {
         switch self {
         case let .Diffuse(color): return color
         }
