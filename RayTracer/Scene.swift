@@ -23,7 +23,7 @@ public struct Viewport {
 }
 
 public struct DirectionalLightSource {
-    var origin: Point = Point.Zero
+    var direction = Vector.Zero
     var color = Color(1, 1, 1)
 }
 

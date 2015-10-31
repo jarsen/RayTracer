@@ -16,7 +16,8 @@ class ViewController: NSViewController {
     }
     
     override func viewDidLayout() {
-        let imageSize = view.bounds.size
+//        let imageSize = view.bounds.size
+        let imageSize = NSSize(width: 1000, height: 1000)
         let rayTracer = RayTracer()
         let image = rayTracer.trace(imageSize, scene: scene1())
         imageView.image = image
@@ -26,11 +27,12 @@ class ViewController: NSViewController {
         var scene = Scene()
         scene.lookFrom = Point(0, 0, 10)
         scene.backgroundColor = NSColor(calibratedRed: 0.7, green: 0.7, blue: 0.7, alpha: 1)
-        let sphere1 = Sphere(center: Point(-2, 0, 0), radius: 2, material: .Diffuse(color: Color(0, 0, 1), specularHighlight: Color(1, 1, 1), phongConstant: 4))
+        let sphere1 = Sphere(center: Point(-2, 0, 0), radius: 2, material: .Diffuse(color: Color(1, 0, 0), specularHighlight: Color(1, 1, 1), phongConstant: 4))
         let sphere2 = Sphere(center: Point(1, 0, -2), radius: 2, material: .Diffuse(color: Color(0, 1, 0), specularHighlight: Color(1, 1, 1), phongConstant: 4))
         scene.objects = [sphere1, sphere2]
+        scene.ambientLight = Color(0.3, 0.3, 0.3)
         var lightSource = DirectionalLightSource()
-        lightSource.origin = Point(0, 1, 1)
+        lightSource.direction = Vector(0, 1, 2).normalized()
         scene.lightSources.append(lightSource)
         return scene
     }

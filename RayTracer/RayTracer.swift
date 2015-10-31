@@ -41,7 +41,7 @@ public struct RayTracer {
                 let pixelColor: NSColor
                 let ray = primaryRayForPixel(imageSize, scene: scene, x: x, y: y, xmin: xmin, xmax: xmax, ymin: ymin, ymax: ymax)
                 if let (point, object) = nearestIntersection(ray, scene: scene) {
-                    pixelColor = object.material.color.nsColor()
+                    pixelColor = illuminatedColorForPoint(point, object: object, scene: scene).nsColor()
                     let _ = point
                 }
                 else {
@@ -87,5 +87,34 @@ public struct RayTracer {
         ray.origin = scene.lookFrom
         ray.direction = (screenPoint - scene.lookFrom).normalized()
         return ray
+    }
+    
+    private func illuminatedColorForPoint(point: Point, object: Traceable, scene: Scene) -> Color {
+        let cr = object.material.color
+        let ca = scene.ambientLight
+        
+        let n = object.normal(point)
+        let p: Double
+        let cp: Color
+        if case let .Diffuse(_, specularHighlight, phong) = object.material {
+            p = phong
+            cp = specularHighlight
+        }
+        else {
+            p = 0
+            cp = Color(0, 0, 0)
+        }
+        
+        let ambientTerm = cr * ca
+        let otherTerms = scene.lightSources.reduce(Color.Zero) { sum, light in
+            let l = light.direction
+            let lambertianTerm = object.material.color * max(0, n ∘ l)
+            let ri = 2 * n * (n ∘ l) - l
+            let e = scene.lookFrom.normalized()
+            let specularTerm = cp * pow(max(0, e ∘ ri), p)
+            let color = light.color * (lambertianTerm + specularTerm)
+            return sum + color
+        }
+        return ambientTerm + otherTerms
     }
 }
