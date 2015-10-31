@@ -28,10 +28,11 @@ class ViewController: NSViewController {
         scene.backgroundColor = NSColor(calibratedRed: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         let sphere1 = Sphere(center: Point(-2, 0, 0), radius: 2, material: .Diffuse(color: Color(1, 0, 0), specularHighlight: Color(1, 1, 1), phongConstant: 16))
         let sphere2 = Sphere(center: Point(1, 0, -2), radius: 2, material: .Diffuse(color: Color(0, 1, 0), specularHighlight: Color(1, 1, 1), phongConstant: 16))
-        scene.objects = [sphere1, sphere2]
+        let sphere3 = Sphere(center: Point(0.5, 2.5, 0), radius: 1, material: .Diffuse(color: Color(1, 1, 1), specularHighlight: Color(1, 1, 1), phongConstant: 16))
+        scene.objects = [sphere1, sphere2, sphere3]
         scene.ambientLight = Color(0.3, 0.3, 0.3)
         var lightSource = DirectionalLightSource()
-        lightSource.direction = Vector(0, -10, 4).normalized()
+        lightSource.direction = Vector(0, 10, 4).normalized()
         scene.lightSources.append(lightSource)
         return scene
     }

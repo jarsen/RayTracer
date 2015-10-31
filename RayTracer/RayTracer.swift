@@ -79,8 +79,9 @@ public struct RayTracer {
     }
     
     private func primaryRayForPixel(imageSize: NSSize, scene: Scene, x: Int, y: Int, xmin: Double, xmax: Double, ymin: Double, ymax: Double) -> Ray {
+        let invertY = ymax - Double(y)
         let u = (Double(x) - xmin) * ((scene.viewport.umax - scene.viewport.umin)/(xmax - xmin)) + scene.viewport.umin + scene.viewport.umin
-        let v = (Double(y) - ymin) * ((scene.viewport.vmax - scene.viewport.vmin)/(ymax - ymin)) + scene.viewport.vmin + scene.viewport.umin
+        let v = (invertY - ymin) * ((scene.viewport.vmax - scene.viewport.vmin)/(ymax - ymin)) + scene.viewport.vmin
         
         let screenPoint = Point(u, v, 0)
         var ray = Ray(type: .Primary)
