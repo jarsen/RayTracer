@@ -9,7 +9,7 @@
 import Cocoa
 
 public protocol Traceable {
-    var color: NSColor { get }
+    var material: Material { get }
     func intersect(ray: Ray) -> Point?
     func normal(point: Point) -> Vector
 }
