@@ -22,9 +22,9 @@ public struct Sphere : Traceable {
     
     public func intersect(ray: Ray) -> Point? {
         // Calculate B & C of the quadtratic
-        let B = 2 * ray.direction * (ray.origin - center)
+        let B = 2 * ray.direction ∘ (ray.origin - center)
         let oc = ray.origin - center
-        let C = (oc * oc) - (radius * radius)
+        let C = (oc ∘ oc) - (radius * radius)
         
         // Calculate the discriminant
         let D = B * B - 4 * C

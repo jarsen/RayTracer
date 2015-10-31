@@ -79,7 +79,16 @@ public func * (left: Vector, right: Double) -> Vector {
     return Vector(right * left.x, right * left.y, right * left.z)
 }
 
-public func * (left: Vector, right: Vector) -> Double {
+public func * (left: Vector, right: Vector) -> Vector {
+    return Vector(left.x * right.x, left.y * right.y, right.x * right.y)
+}
+
+infix operator ∘ {
+associativity left
+precedence 155
+}
+
+public func ∘ (left: Vector, right: Vector) -> Double {
     return left.dot(right)
 }
 
