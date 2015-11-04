@@ -25,12 +25,14 @@ public struct Ray : CustomStringConvertible {
         }
     }
     
-    public var origin: Point = Vector.Zero
-    public var direction = Vector.Zero
     public var type: Type
+    public var origin: Point
+    public var direction: Vector
     
-    public init(type: Type) {
+    public init(type: Type, origin: Point = Point.Zero, direction: Vector = Vector.Zero) {
         self.type = type
+        self.origin = origin
+        self.direction = direction
     }
     
     public var description: String {

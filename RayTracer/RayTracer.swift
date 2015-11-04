@@ -94,6 +94,14 @@ public struct RayTracer {
         return ray
     }
     
+    private func isShadowed(ray: Ray, scene: Scene, lightSource: DirectionalLightSource) -> Bool {
+        guard let (_, _, _) = nearestIntersection(ray, scene: scene) else {
+            return false
+        }
+        
+        return true
+    }
+    
     private func illuminatedColorForPoint(point: Point, normal: Vector, object: Traceable, scene: Scene) -> Color {
         let cr = object.material.color
         let ca = scene.ambientLight
@@ -112,13 +120,20 @@ public struct RayTracer {
         
         let ambientTerm = cr * ca
         let otherTerms = scene.lightSources.reduce(Color.Zero) { sum, light in
-            let l = light.direction
-            let lambertianTerm = object.material.color * max(0, n ∘ l)
-            let ri = 2 * n * (n ∘ l) - l
-            let e = scene.lookFrom.normalized()
-            let specularTerm = cp * pow(max(0, e ∘ ri), p)
-            let color = light.color * (lambertianTerm + specularTerm)
-            return sum + color
+            let rayDirection = light.direction
+            let shadowRay = Ray(type: .Shadow, origin: point + (rayDirection / 100000000), direction: rayDirection)
+            if isShadowed(shadowRay, scene: scene, lightSource: light) {
+                return sum
+            }
+            else {
+                let l = light.direction
+                let lambertianTerm = object.material.color * max(0, n ∘ l)
+                let ri = 2 * n * (n ∘ l) - l
+                let e = scene.lookFrom.normalized()
+                let specularTerm = cp * pow(max(0, e ∘ ri), p)
+                let color = light.color * (lambertianTerm + specularTerm)
+                return sum + color
+            }
         }
         return ambientTerm + otherTerms
     }
