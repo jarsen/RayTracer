@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0F46211BE5796E00DB5857 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F46201BE5796E00DB5857 /* Polygon.swift */; };
+		1E0F46231BE57B5400DB5857 /* PolygonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F46221BE57B5400DB5857 /* PolygonTests.swift */; };
 		1E1521EB1BDF1BDF0050E065 /* RayTracer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1521EA1BDF1BDF0050E065 /* RayTracer.swift */; };
 		1E1521ED1BE048DB0050E065 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1521EC1BE048DB0050E065 /* Scene.swift */; };
 		1E5DD2031BE2DEF60021820F /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5DD2021BE2DEF60021820F /* Material.swift */; };
@@ -16,7 +18,6 @@
 		1EEF21771BDC4C30001B8BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEF21761BDC4C30001B8BB9 /* Assets.xcassets */; };
 		1EEF217A1BDC4C30001B8BB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EEF21781BDC4C30001B8BB9 /* Main.storyboard */; };
 		1EEF21851BDC4C30001B8BB9 /* RayTracerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21841BDC4C30001B8BB9 /* RayTracerTests.swift */; };
-		1EEF21901BDC4C30001B8BB9 /* RayTracerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF218F1BDC4C30001B8BB9 /* RayTracerUITests.swift */; };
 		1EEF21A01BDC4EB8001B8BB9 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF219F1BDC4EB8001B8BB9 /* Ray.swift */; };
 		1EEF21A21BDC5B37001B8BB9 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21A11BDC5B37001B8BB9 /* Sphere.swift */; };
 		1EEF21A41BDC61F5001B8BB9 /* Traceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEF21A31BDC61F5001B8BB9 /* Traceable.swift */; };
@@ -32,16 +33,11 @@
 			remoteGlobalIDString = 1EEF216E1BDC4C30001B8BB9;
 			remoteInfo = RayTracer;
 		};
-		1EEF218C1BDC4C30001B8BB9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EEF21671BDC4C30001B8BB9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EEF216E1BDC4C30001B8BB9;
-			remoteInfo = RayTracer;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E0F46201BE5796E00DB5857 /* Polygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
+		1E0F46221BE57B5400DB5857 /* PolygonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolygonTests.swift; sourceTree = "<group>"; };
 		1E1521EA1BDF1BDF0050E065 /* RayTracer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RayTracer.swift; sourceTree = "<group>"; };
 		1E1521EC1BE048DB0050E065 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		1E5DD2021BE2DEF60021820F /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
@@ -55,7 +51,6 @@
 		1EEF21801BDC4C30001B8BB9 /* RayTracerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RayTracerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEF21841BDC4C30001B8BB9 /* RayTracerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayTracerTests.swift; sourceTree = "<group>"; };
 		1EEF21861BDC4C30001B8BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1EEF218B1BDC4C30001B8BB9 /* RayTracerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RayTracerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEF218F1BDC4C30001B8BB9 /* RayTracerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayTracerUITests.swift; sourceTree = "<group>"; };
 		1EEF21911BDC4C30001B8BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EEF219F1BDC4EB8001B8BB9 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
@@ -80,13 +75,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1EEF21881BDC4C30001B8BB9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,7 +93,6 @@
 			children = (
 				1EEF216F1BDC4C30001B8BB9 /* RayTracer.app */,
 				1EEF21801BDC4C30001B8BB9 /* RayTracerTests.xctest */,
-				1EEF218B1BDC4C30001B8BB9 /* RayTracerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +111,7 @@
 				1E5DD2021BE2DEF60021820F /* Material.swift */,
 				1EEF21A51BDC6353001B8BB9 /* Vector.swift */,
 				1E1521EA1BDF1BDF0050E065 /* RayTracer.swift */,
+				1E0F46201BE5796E00DB5857 /* Polygon.swift */,
 				1E1521EC1BE048DB0050E065 /* Scene.swift */,
 			);
 			path = RayTracer;
@@ -136,6 +124,7 @@
 				1EEF21861BDC4C30001B8BB9 /* Info.plist */,
 				1EEF21A71BDC6735001B8BB9 /* VectorTests.swift */,
 				1E88DEFE1BDC73A900F2897D /* SphereTests.swift */,
+				1E0F46221BE57B5400DB5857 /* PolygonTests.swift */,
 			);
 			path = RayTracerTests;
 			sourceTree = "<group>";
@@ -187,24 +176,6 @@
 			productReference = 1EEF21801BDC4C30001B8BB9 /* RayTracerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1EEF218A1BDC4C30001B8BB9 /* RayTracerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1EEF219A1BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracerUITests" */;
-			buildPhases = (
-				1EEF21871BDC4C30001B8BB9 /* Sources */,
-				1EEF21881BDC4C30001B8BB9 /* Frameworks */,
-				1EEF21891BDC4C30001B8BB9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1EEF218D1BDC4C30001B8BB9 /* PBXTargetDependency */,
-			);
-			name = RayTracerUITests;
-			productName = RayTracerUITests;
-			productReference = 1EEF218B1BDC4C30001B8BB9 /* RayTracerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,10 +190,6 @@
 						CreatedOnToolsVersion = 7.1;
 					};
 					1EEF217F1BDC4C30001B8BB9 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 1EEF216E1BDC4C30001B8BB9;
-					};
-					1EEF218A1BDC4C30001B8BB9 = {
 						CreatedOnToolsVersion = 7.1;
 						TestTargetID = 1EEF216E1BDC4C30001B8BB9;
 					};
@@ -243,7 +210,6 @@
 			targets = (
 				1EEF216E1BDC4C30001B8BB9 /* RayTracer */,
 				1EEF217F1BDC4C30001B8BB9 /* RayTracerTests */,
-				1EEF218A1BDC4C30001B8BB9 /* RayTracerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,13 +231,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1EEF21891BDC4C30001B8BB9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -286,6 +245,7 @@
 				1EEF21A41BDC61F5001B8BB9 /* Traceable.swift in Sources */,
 				1E1521ED1BE048DB0050E065 /* Scene.swift in Sources */,
 				1EEF21A21BDC5B37001B8BB9 /* Sphere.swift in Sources */,
+				1E0F46211BE5796E00DB5857 /* Polygon.swift in Sources */,
 				1EEF21A61BDC6353001B8BB9 /* Vector.swift in Sources */,
 				1EEF21731BDC4C30001B8BB9 /* AppDelegate.swift in Sources */,
 			);
@@ -298,14 +258,7 @@
 				1EEF21A81BDC6735001B8BB9 /* VectorTests.swift in Sources */,
 				1E88DEFF1BDC73A900F2897D /* SphereTests.swift in Sources */,
 				1EEF21851BDC4C30001B8BB9 /* RayTracerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1EEF21871BDC4C30001B8BB9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1EEF21901BDC4C30001B8BB9 /* RayTracerUITests.swift in Sources */,
+				1E0F46231BE57B5400DB5857 /* PolygonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,11 +269,6 @@
 			isa = PBXTargetDependency;
 			target = 1EEF216E1BDC4C30001B8BB9 /* RayTracer */;
 			targetProxy = 1EEF21811BDC4C30001B8BB9 /* PBXContainerItemProxy */;
-		};
-		1EEF218D1BDC4C30001B8BB9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1EEF216E1BDC4C30001B8BB9 /* RayTracer */;
-			targetProxy = 1EEF218C1BDC4C30001B8BB9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -466,32 +414,6 @@
 			};
 			name = Release;
 		};
-		1EEF219B1BDC4C30001B8BB9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = RayTracerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.heartbit.RayTracerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = RayTracer;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		1EEF219C1BDC4C30001B8BB9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = RayTracerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = us.heartbit.RayTracerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = RayTracer;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -518,15 +440,6 @@
 			buildConfigurations = (
 				1EEF21981BDC4C30001B8BB9 /* Debug */,
 				1EEF21991BDC4C30001B8BB9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1EEF219A1BDC4C30001B8BB9 /* Build configuration list for PBXNativeTarget "RayTracerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1EEF219B1BDC4C30001B8BB9 /* Debug */,
-				1EEF219C1BDC4C30001B8BB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

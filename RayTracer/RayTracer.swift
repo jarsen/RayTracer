@@ -40,8 +40,8 @@ public struct RayTracer {
             for y in 0..<pixelsHigh {
                 let pixelColor: NSColor
                 let ray = primaryRayForPixel(imageSize, scene: scene, x: x, y: y, xmin: xmin, xmax: xmax, ymin: ymin, ymax: ymax)
-                if let (point, object) = nearestIntersection(ray, scene: scene) {
-                    pixelColor = illuminatedColorForPoint(point, object: object, scene: scene).nsColor()
+                if let (point, normal, object) = nearestIntersection(ray, scene: scene) {
+                    pixelColor = illuminatedColorForPoint(point, normal: normal, object: object, scene: scene).nsColor()
                     let _ = point
                 }
                 else {
@@ -56,24 +56,28 @@ public struct RayTracer {
         return image
     }
     
-    private func nearestIntersection(ray: Ray, scene: Scene) -> (Point, Traceable)? {
+    private func nearestIntersection(ray: Ray, scene: Scene) -> (Point, Vector, Traceable)? {
         var nearestPoint: Point?
+        var nearestNormal: Vector?
         var shortestLength = Double.infinity
         var nearestObject: Traceable?
 
         for object in scene.objects {
-            if let point = object.intersect(ray) {
+            if let (point, normal) = object.intersect(ray) {
                 let length = (point - ray.origin).length()
                 if length < shortestLength {
                     shortestLength = length
                     nearestPoint = point
+                    nearestNormal = normal
                     nearestObject = object
                 }
             }
         }
         
-        if let nearestPoint = nearestPoint, nearestObject = nearestObject {
-            return (nearestPoint, nearestObject)
+        if let nearestPoint = nearestPoint,
+            nearestNormal = nearestNormal,
+            nearestObject = nearestObject {
+                return (nearestPoint, nearestNormal, nearestObject)
         }
         return nil
     }
@@ -90,11 +94,11 @@ public struct RayTracer {
         return ray
     }
     
-    private func illuminatedColorForPoint(point: Point, object: Traceable, scene: Scene) -> Color {
+    private func illuminatedColorForPoint(point: Point, normal: Vector, object: Traceable, scene: Scene) -> Color {
         let cr = object.material.color
         let ca = scene.ambientLight
         
-        let n = object.normal(point)
+        let n = normal
         let p: Double
         let cp: Color
         if case let .Diffuse(_, specularHighlight, phong) = object.material {

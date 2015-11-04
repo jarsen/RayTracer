@@ -10,25 +10,19 @@ import XCTest
 import RayTracer
 
 class SphereTests: XCTestCase {
-
-    func testNormal() {
-        let sphere = Sphere(radius: 1, material: .Reflective(color: Color(1, 1, 1)))
-        let actual = sphere.normal(Point(1,0,0))
-        let expected = Vector(1,0,0)
-        XCTAssertEqual(actual, expected)
-    }
-
     func testBasicIntersectionStartingAtOrigin() {
         let sphere = Sphere(radius: 1, material: .Reflective(color: Color(1, 1, 1)))
         var ray = Ray(type: .Primary)
         ray.direction = Vector(1, 0, 0)
-        XCTAssertEqual(sphere.intersect(ray), Point(1,0,0))
+        let (actualIntersection, _) = sphere.intersect(ray)!
+        XCTAssertEqual(actualIntersection, Point(1,0,0))
     }
     
     func testBasicIntersectionWithCircleAwayBy2() {
         let sphere = Sphere(center: Point(2, 0, 0), radius: 1, material: .Reflective(color: Color(1, 1, 1)))
         var ray = Ray(type: .Primary)
         ray.direction = Vector(1, 0, 0)
-        XCTAssertEqual(sphere.intersect(ray), Point(1,0,0))
+        let (actualIntersection, _) = sphere.intersect(ray)!
+        XCTAssertEqual(actualIntersection, Point(1,0,0))
     }
 }

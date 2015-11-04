@@ -10,6 +10,5 @@ import Cocoa
 
 public protocol Traceable {
     var material: Material { get }
-    func intersect(ray: Ray) -> Point?
-    func normal(point: Point) -> Vector
+    func intersect(ray: Ray) -> (point: Point, normal: Vector)?
 }

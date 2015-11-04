@@ -20,7 +20,7 @@ public struct Sphere : Traceable {
         self.material = material
     }
     
-    public func intersect(ray: Ray) -> Point? {
+    public func intersect(ray: Ray) -> (point: Point, normal: Vector)? {
         // Calculate B & C of the quadtratic
         let B = 2 * ray.direction ∘ (ray.origin - center)
         let oc = ray.origin - center
@@ -47,12 +47,10 @@ public struct Sphere : Traceable {
         else {
             t = t0
         }
+     
+        let point = ray.origin + ray.direction * t
+        let normal = (point - center) / radius
         
-        return ray.origin + ray.direction * t
-    }
-    
-    
-    public func normal(point: Point) -> Vector {
-        return (point - center) / radius
+        return (point, normal)
     }
 }

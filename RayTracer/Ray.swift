@@ -17,7 +17,7 @@ public struct Ray : CustomStringConvertible {
         
         public var description: String {
             switch self {
-            case .Primary: return "Primary"
+             case .Primary: return "Primary"
             case .Reflection: return "Reflection"
             case .Transmission: return "Transmission"
             case .Shadow: return "Shadow"
