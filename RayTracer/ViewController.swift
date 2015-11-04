@@ -33,7 +33,7 @@ class ViewController: NSViewController {
         scene.objects = [sphere1, sphere2, sphere3, floor]
         scene.ambientLight = Color(0.3, 0.3, 0.3)
         var lightSource = DirectionalLightSource()
-        lightSource.direction = Vector(0, 10, 4).normalized()
+        lightSource.direction = Vector(-0.25, 1, 1).normalized()
         scene.lightSources.append(lightSource)
         return scene
     }
