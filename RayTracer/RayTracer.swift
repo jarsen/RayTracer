@@ -41,7 +41,7 @@ public struct RayTracer {
                 let pixelColor: NSColor
                 let ray = primaryRayForPixel(imageSize, scene: scene, x: x, y: y, xmin: xmin, xmax: xmax, ymin: ymin, ymax: ymax)
                 if let (point, normal, object) = nearestIntersection(ray, scene: scene) {
-                    pixelColor = illuminatedColorForPoint(point, normal: normal, object: object, scene: scene).nsColor()
+                    pixelColor = illuminatedColorForPoint(point, normal: normal, ray: ray, object: object, scene: scene, recursionLimit: 3).nsColor()
                     let _ = point
                 }
                 else {
@@ -56,7 +56,7 @@ public struct RayTracer {
         return image
     }
     
-    private func nearestIntersection(ray: Ray, scene: Scene) -> (Point, Vector, Traceable)? {
+    private func nearestIntersection(ray: Ray, scene: Scene) -> (point: Point, normal: Vector, object: Traceable)? {
         var nearestPoint: Point?
         var nearestNormal: Vector?
         var shortestLength = Double.infinity
@@ -102,39 +102,51 @@ public struct RayTracer {
         return true
     }
     
-    private func illuminatedColorForPoint(point: Point, normal: Vector, object: Traceable, scene: Scene) -> Color {
+    private func illuminatedColorForPoint(point: Point, normal: Vector, ray: Ray, object: Traceable, scene: Scene, recursionLimit: Int) -> Color {
         let cr = object.material.color
         let ca = scene.ambientLight
+        let ambient = cr * ca
         
-        let n = normal
-        let p: Double
-        let cp: Color
-        if case let .Diffuse(_, specularHighlight, phong) = object.material {
-            p = phong
-            cp = specularHighlight
-        }
-        else {
-            p = 0
-            cp = Color(0, 0, 0)
-        }
-        
-        let ambientTerm = cr * ca
-        let otherTerms = scene.lightSources.reduce(Color.Zero) { sum, light in
-            let rayDirection = light.direction
-            let shadowRay = Ray(type: .Shadow, origin: point + (rayDirection / 100000000), direction: rayDirection)
-            if isShadowed(shadowRay, scene: scene, lightSource: light) {
-                return sum
+        switch object.material {
+        case let .Diffuse(_, specularHighlight, phongConstant):
+            let other = scene.lightSources.reduce(Color.Zero) { sum, light in
+                let shadowRayDirection = light.direction
+                let shadowRay = Ray(type: .Shadow, origin: point + (shadowRayDirection / 100000000), direction: shadowRayDirection)
+                if isShadowed(shadowRay, scene: scene, lightSource: light) {
+                    return sum
+                }
+                else {
+                    let l = light.direction
+                    let diffuse = object.material.color * max(0, normal ∘ l)
+                    let ri = 2 * normal * (normal ∘ l) - l
+                    let e = scene.lookFrom.normalized()
+                    let specular = specularHighlight * pow(max(0, e ∘ ri), phongConstant)
+                    let color = light.color * (diffuse + specular)
+                    return sum + color
+                }
             }
-            else {
-                let l = light.direction
-                let lambertianTerm = object.material.color * max(0, n ∘ l)
-                let ri = 2 * n * (n ∘ l) - l
-                let e = scene.lookFrom.normalized()
-                let specularTerm = cp * pow(max(0, e ∘ ri), p)
-                let color = light.color * (lambertianTerm + specularTerm)
-                return sum + color
-            }
+            
+            return ambient + other
+            
+            case let .Reflective(thisColor):
+                let other = scene.lightSources.reduce(Color.Zero) { sum, light in
+                    if recursionLimit > 0 {
+                        let reflectionDirection = ray.direction - (2 * normal * (ray.direction ∘ normal))
+                        let reflectionRay = Ray(type: .Reflection, origin: point + (reflectionDirection / 100000000), direction: reflectionDirection)
+                        if let (reflectedPoint, reflectedPointNormal, reflectedObject) = nearestIntersection(reflectionRay, scene: scene) {
+                            let reflected = illuminatedColorForPoint(reflectedPoint, normal: reflectedPointNormal, ray: reflectionRay, object: reflectedObject, scene: scene, recursionLimit: recursionLimit - 1)
+                            return reflected
+                        }
+                        else {
+                            return light.color
+                        }
+                    }
+                    else {
+                        return thisColor
+                    }
+                }
+                
+                return ambient + other
         }
-        return ambientTerm + otherTerms
     }
 }
