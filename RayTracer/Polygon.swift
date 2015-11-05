@@ -17,7 +17,7 @@ func - (left: Point2D, right: Point2D) -> Point2D {
 public struct Polygon : Traceable {
     public var points: [Point]
     public var material: Material
-    public var isSingleSided = true
+    public var isSingleSided = false
     
     public init(points: [Point], material: Material) {
         self.points = points

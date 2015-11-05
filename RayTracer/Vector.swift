@@ -53,6 +53,10 @@ public extension Color {
     public func nsColor() -> NSColor {
         return NSColor(calibratedRed: CGFloat(x), green: CGFloat(y), blue: CGFloat(z), alpha: 1)
     }
+    
+    public func clamp() -> Color {
+        return Color(min(x, 1), min(y, 1), min(z, 1))
+    }
 }
 
 public func + (left: Vector, right: Vector) -> Vector {
@@ -80,7 +84,7 @@ public func * (left: Vector, right: Double) -> Vector {
 }
 
 public func * (left: Vector, right: Vector) -> Vector {
-    return Vector(left.x * right.x, left.y * right.y, right.x * right.y)
+    return Vector(left.x * right.x, left.y * right.y, left.z * right.z)
 }
 
 infix operator ∘ {

@@ -57,15 +57,16 @@ class ViewController: NSViewController {
         
         let lightSource = DirectionalLightSource(direction: Vector(1, 0, 0), color: Color(1, 1, 1))
         scene.lightSources = [lightSource]
-        
-        let sphere1 = Sphere(center: Point(0.35, 0, -0.1), radius: 0.05, material: .Diffuse(color: Color(1, 1, 1), specularHighlight: Color(1, 1, 1), phongConstant: 4))
-        let sphere2 = Sphere(center: Point(0.2, 0, -0.1), radius: 0.075, material: .Diffuse(color: Color(1, 0, 0), specularHighlight: Color(0.5, 1, 0.5), phongConstant: 32))
-        let sphere3 = Sphere(center: Point(-0.6, 0, 0), radius: 0.3, material: .Diffuse(color: Color(0, 1, 0), specularHighlight: Color(0.5, 1, 0.5), phongConstant: 32))
-        
+//        
+//        let sphere1 = Sphere(center: Point(0.35, 0, -0.1), radius: 0.05, material: .Diffuse(color: Color(1, 1, 1), specularHighlight: Color(1, 1, 1), phongConstant: 4))
+//        let sphere2 = Sphere(center: Point(0.2, 0, -0.1), radius: 0.075, material: .Diffuse(color: Color(1, 0, 0), specularHighlight: Color(0.5, 1, 0.5), phongConstant: 32))
+//        let sphere3 = Sphere(center: Point(-0.6, 0, 0), radius: 0.3, material: .Diffuse(color: Color(0, 1, 0), specularHighlight: Color(0.5, 1, 0.5), phongConstant: 32))
+//        
         let triangle1 = Polygon(points: [Point(0.3, -0.3, -0.4), Point(0, 0.3, -0.1), Point(-0.3, -0.3, 0.2)], material: .Diffuse(color: Color(0, 0, 1), specularHighlight: Color(1, 1, 1), phongConstant: 32))
-        let triangle2 = Polygon(points: [Point(-0.2, 0.1, 0.1), Point(-0.2, -0.5, 0.2), Point(-0.2, 0.1, -0.3)], material: .Diffuse(color: Color(1, 1, 0), specularHighlight: Color(1, 1, 1), phongConstant: 4))
+//        let triangle2 = Polygon(points: [Point(-0.2, 0.1, 0.1), Point(-0.2, -0.5, 0.2), Point(-0.2, 0.1, -0.3)], material: .Diffuse(color: Color(1, 1, 0), specularHighlight: Color(1, 1, 1), phongConstant: 4))
         
-        scene.objects = [sphere1, sphere2, sphere3, triangle1, triangle2]
+//        scene.objects = [sphere1, sphere2, sphere3, triangle1, triangle2]
+        scene.objects = [triangle1]
         
         return scene
     }

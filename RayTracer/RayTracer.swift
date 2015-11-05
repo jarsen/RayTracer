@@ -94,8 +94,12 @@ public struct RayTracer {
         return ray
     }
     
-    private func isShadowed(ray: Ray, scene: Scene, lightSource: DirectionalLightSource) -> Bool {
-        guard let (_, _, _) = nearestIntersection(ray, scene: scene) else {
+    let epsilon: Double = 2
+    
+    private func isShadowed(point: Point, scene: Scene, lightSource: DirectionalLightSource) -> Bool {
+        let shadowRayDirection = lightSource.direction
+        let shadowRay = Ray(type: .Shadow, origin: point + (shadowRayDirection / epsilon), direction: shadowRayDirection)
+        guard let (_, _, _) = nearestIntersection(shadowRay, scene: scene) else {
             return false
         }
         
@@ -107,14 +111,12 @@ public struct RayTracer {
         let ca = scene.ambientLight
         let ambient = cr * ca
         
-        let epsilon: Double = 2
+        
         
         switch object.material {
         case let .Diffuse(_, specularHighlight, phongConstant):
             let other = scene.lightSources.reduce(Color.Zero) { sum, light in
-                let shadowRayDirection = light.direction
-                let shadowRay = Ray(type: .Shadow, origin: point + (shadowRayDirection / epsilon), direction: shadowRayDirection)
-                if isShadowed(shadowRay, scene: scene, lightSource: light) {
+                if isShadowed(point, scene: scene, lightSource: light) {
                     return sum
                 }
                 else {
@@ -128,7 +130,8 @@ public struct RayTracer {
                 }
             }
             
-            return ambient + other
+            let color = (ambient + other).clamp()
+            return color
             
             case let .Reflective(thisColor):
                 let other = scene.lightSources.reduce(Color.Zero) { sum, light in
