@@ -8,34 +8,34 @@
 
 import Cocoa
 
-public struct Viewport {
-    public var umin: Double
-    public var umax: Double
-    public var vmin: Double
-    public var vmax: Double
-    
-    public init(umin: Double, umax: Double, vmin: Double, vmax: Double) {
-        self.umin = umin
-        self.umax = umax
-        self.vmin = vmin
-        self.vmax = vmax
-    }
-}
-
 public struct DirectionalLightSource {
-    var direction = Vector.Zero
-    var color = Color(1, 1, 1)
+    var direction: Vector /// Direction to the light source
+    var color: Color
+    
+    public init(direction: Vector, color: Color) {
+        self.direction = direction.normalized()
+        self.color = color
+    }
 }
 
 public struct Scene {
     public var objects = [Traceable]()
-    public var lookFrom: Point = Point.Zero
-    public var backgroundColor = NSColor.blueColor()
-    public var viewport = Viewport(umin: -5, umax: 5, vmin: -5, vmax: 5)
+    public let lookFrom: Point
+    public var backgroundColor = Color(0, 0, 0)
+    public let fieldOfView: Double
+    public var viewport: (umin: Double, umax: Double, vmin: Double, vmax: Double)
     public var ambientLight = Color(0.1, 0.1, 0.1)
     public var lightSources = [DirectionalLightSource]()
     
-    public init() {
+    
+    
+    public init(lookFrom: Point, fieldOfView: Double) {
+        self.lookFrom = lookFrom
+        self.fieldOfView = fieldOfView
         
+        let length = lookFrom.length()
+        let halfAngle = fieldOfView / 2
+        let x = length * tan(halfAngle * Double(M_PI) / 180)
+        viewport = (-x, x, -x, x)
     }
 }

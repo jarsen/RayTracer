@@ -45,7 +45,7 @@ public struct RayTracer {
                     let _ = point
                 }
                 else {
-                    pixelColor = scene.backgroundColor
+                    pixelColor = scene.backgroundColor.nsColor()
                 }
                 bitmap.setColor(pixelColor, atX: x, y: y)
             }
@@ -107,11 +107,13 @@ public struct RayTracer {
         let ca = scene.ambientLight
         let ambient = cr * ca
         
+        let epsilon: Double = 2
+        
         switch object.material {
         case let .Diffuse(_, specularHighlight, phongConstant):
             let other = scene.lightSources.reduce(Color.Zero) { sum, light in
                 let shadowRayDirection = light.direction
-                let shadowRay = Ray(type: .Shadow, origin: point + (shadowRayDirection / 100000000), direction: shadowRayDirection)
+                let shadowRay = Ray(type: .Shadow, origin: point + (shadowRayDirection / epsilon), direction: shadowRayDirection)
                 if isShadowed(shadowRay, scene: scene, lightSource: light) {
                     return sum
                 }
@@ -132,7 +134,7 @@ public struct RayTracer {
                 let other = scene.lightSources.reduce(Color.Zero) { sum, light in
                     if recursionLimit > 0 {
                         let reflectionDirection = ray.direction - (2 * normal * (ray.direction ∘ normal))
-                        let reflectionRay = Ray(type: .Reflection, origin: point + (reflectionDirection / 100000000), direction: reflectionDirection)
+                        let reflectionRay = Ray(type: .Reflection, origin: point + (reflectionDirection / epsilon), direction: reflectionDirection)
                         if let (reflectedPoint, reflectedPointNormal, reflectedObject) = nearestIntersection(reflectionRay, scene: scene) {
                             let reflected = illuminatedColorForPoint(reflectedPoint, normal: reflectedPointNormal, ray: reflectionRay, object: reflectedObject, scene: scene, recursionLimit: recursionLimit - 1)
                             return reflected
