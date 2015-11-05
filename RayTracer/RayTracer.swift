@@ -94,7 +94,7 @@ public struct RayTracer {
         return ray
     }
     
-    let epsilon: Double = 2
+    let epsilon: Double = 10000000
     
     private func isShadowed(point: Point, scene: Scene, lightSource: DirectionalLightSource) -> Bool {
         let shadowRayDirection = lightSource.direction
@@ -123,7 +123,7 @@ public struct RayTracer {
                     let l = light.direction
                     let diffuse = object.material.color * max(0, normal ∘ l)
                     let ri = 2 * normal * (normal ∘ l) - l
-                    let e = scene.lookFrom.normalized()
+                    let e = (scene.lookFrom - point).normalized()
                     let specular = specularHighlight * pow(max(0, e ∘ ri), phongConstant)
                     let color = light.color * (diffuse + specular)
                     return sum + color
@@ -143,11 +143,11 @@ public struct RayTracer {
                             return reflected
                         }
                         else {
-                            return light.color
+                            return thisColor
                         }
                     }
                     else {
-                        return thisColor
+                        return scene.backgroundColor
                     }
                 }
                 
