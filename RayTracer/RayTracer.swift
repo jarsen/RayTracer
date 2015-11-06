@@ -130,14 +130,13 @@ public struct RayTracer {
                 }
             }
             
-            let color = (ambient + other).clamp()
-            return color
+            return (ambient + other).clamp()
             
             case let .Reflective(thisColor):
                 let other = scene.lightSources.reduce(Color.Zero) { sum, light in
                     if recursionLimit > 0 {
                         let reflectionDirection = ray.direction - (2 * normal * (ray.direction ∘ normal))
-                        let reflectionRay = Ray(type: .Reflection, origin: point + (reflectionDirection / epsilon), direction: reflectionDirection)
+                        let reflectionRay = Ray(type: .Reflection, origin: point + (reflectionDirection / epsilon), direction: reflectionDirection.normalized())
                         if let (reflectedPoint, reflectedPointNormal, reflectedObject) = nearestIntersection(reflectionRay, scene: scene) {
                             let reflected = illuminatedColorForPoint(reflectedPoint, normal: reflectedPointNormal, ray: reflectionRay, object: reflectedObject, scene: scene, recursionLimit: recursionLimit - 1)
                             return reflected
@@ -151,7 +150,41 @@ public struct RayTracer {
                     }
                 }
                 
-                return ambient + other
+                return (ambient + other).clamp()
+            
+        case let .Transparent(thisColor):
+            let other = scene.lightSources.reduce(Color.Zero) { sum, light in
+                if recursionLimit > 0 {
+                    let incidenceIndex = 1.0 // vacuum
+                    let refractionIndex = 1.52 // crown glass
+                    let n = incidenceIndex / refractionIndex
+                    
+                    let cosI = -(normal ∘ ray.direction)
+                    let sinT2 = n * n * (1 - cosI * cosI)
+                    
+                    if sinT2 > 1 {
+                        fatalError("Bad refraction")
+                    }
+                    
+                    let cosT = sqrt(1 - sinT2)
+                    let refractionDirection = ray.direction * n + normal * (n * cosI - cosT)
+
+                    let refractionRay = Ray(type: .Transmission, origin: point + (refractionDirection / epsilon), direction: refractionDirection)
+                    if let (refractedPoint, refractedPointNormal, refractedObject) = nearestIntersection(refractionRay, scene: scene) {
+                        let refracted = illuminatedColorForPoint(refractedPoint, normal: refractedPointNormal, ray: refractionRay, object: refractedObject, scene: scene, recursionLimit: recursionLimit - 1)
+                        return sum + refracted
+                    }
+                    else {
+                        return sum + scene.backgroundColor
+                    }
+                }
+                else {
+                    return thisColor
+                }
+            }
+            
+            return (ambient + other).clamp()
+
         }
     }
 }

@@ -1,4 +1,4 @@
-//
+
 //  Polygon.swift
 //  RayTracer
 //

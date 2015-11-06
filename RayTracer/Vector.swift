@@ -38,7 +38,11 @@ public struct Vector : Equatable, CustomStringConvertible {
     }
     
     public func normalized() -> Vector {
-        return self / length()
+        let l = length()
+        if l == 0 {
+            return Vector.Zero
+        }
+        return self / l
     }
     
     public var description: String {
